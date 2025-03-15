@@ -1,0 +1,136 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREMA</title>
+    <!-- Enlace a tu archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlace a fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <div class="header">
+        <section class="header-logo">
+        <img src="svg/logo-white.svg" alt="logo animation" width="50%" >
+        </section>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="nav">
+        <a href="#">Stock</a>
+        <a href="#">Sobre Crema</a>
+        <a href="#">FAQ</a>
+        <a href="#" onclick="openCart()">CARRITO<span id="cart-count">0</span></a>
+    </nav>
+
+    <!-- Carrusel de imágenes -->
+    <div class="slider" style="
+            --width: 100px;
+            --height: 50px;
+            --quantity: 10;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="img/slider1_1.png" alt=""></div>
+                <div class="item" style="--position: 2"><img src="img/slider1_2.png" alt=""></div>
+                <div class="item" style="--position: 3"><img src="img/slider1_3.png" alt=""></div>
+                <div class="item" style="--position: 4"><img src="img/slider1_4.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="img/slider1_5.png" alt=""></div>
+                <div class="item" style="--position: 6"><img src="img/slider1_6.png" alt=""></div>
+                <div class="item" style="--position: 7"><img src="img/slider1_7.png" alt=""></div>
+                <div class="item" style="--position: 8"><img src="img/slider1_8.png" alt=""></div>
+                <div class="item" style="--position: 9"><img src="img/slider1_9.png" alt=""></div>
+                <div class="item" style="--position: 10"><img src="img/slider1_10.png" alt=""></div>
+            </div>
+        </div>
+
+        <div class="slider" reverse="true" style="
+            --width: 500px;
+            --height: 500px;
+            --quantity: 9;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="img/slider2_1.png" alt=""></div>
+                <div class="item" style="--position: 2"><img src="img/slider2_2.png" alt=""></div>
+                <div class="item" style="--position: 3"><img src="img/slider2_3.png" alt=""></div>
+                <div class="item" style="--position: 4"><img src="img/slider2_4.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="img/slider2_5.png" alt=""></div>
+                <div class="item" style="--position: 6"><img src="img/slider2_6.png" alt=""></div>
+                <div class="item" style="--position: 7"><img src="img/slider2_7.png" alt=""></div>
+                <div class="item" style="--position: 8"><img src="img/slider2_8.png" alt=""></div>
+                <div class="item" style="--position: 9"><img src="img/slider2_9.png" alt=""></div>
+            </div>
+        </div>
+
+    <!-- Sección de productos -->
+    <div class="products-section">
+        <div class="section-title">
+            Categorias
+        <ul class="dropdown-menu">
+            <li><a href="#" data-category="todos">Todos los productos</a></li>
+            <li><a href="#" data-category="sueter">Sueter</a></li>
+            <li><a href="#" data-category="camisa">Camisa</a></li>
+            <li><a href="#" data-category="camiseta">Camiseta</a></li>
+            <li><a href="#" data-category="pantalon">Pantalón</a></li>
+        </ul>
+        </div>
+        <div class="product-grid">
+            <!-- Ejemplo de producto - Puedes duplicar este bloque para más productos -->
+            <div class="product-card" data-id="1" data-name="I 3 NY #2" data-price="35" data-category="sueter">
+                <img src="/api/IMG_5829.webp" alt="I 3 NY #2" class="product-image">
+                <div class="product-title">I 3 NY #2 </div>
+                <div class="product-status">$35.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Otro producto -->
+            <div class="product-card" data-id="2" data-name="MOHAWKER NO. 11" data-price="40" data-category="camiseta">
+                <img src="/api/IMG_5841.webp" alt="MOHAWKER NO. 11" class="product-image">
+                <div class="product-title">MOHAWKER NO. 11</div>
+                <div class="product-status">$40.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Otro producto -->
+            <div class="product-card" data-id="3" data-name="I 3 NY #2" data-price="35" data-category="camisa">
+                <img src="/api/IMG_6029.webp" alt="I 3 NY #2" class="product-image">
+                <div class="product-title">I 3 NY #2</div>
+                <div class="product-status">$35.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Otro producto -->
+            <div class="product-card" data-id="3" data-name="I 3 NY #2" data-price="35" data-category="pantalon">
+                <img src="/api/IMG_6029.webp" alt="I 3 NY #2" class="product-image">
+                <div class="product-title">I 3 NY #2</div>
+                <div class="product-status">$35.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente del carrito -->
+    <div class="cart-popup">
+        <h2>Carrito de compras</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">Total: $0.00</div>
+        <button class="whatsapp-button" onclick="buyViaWhatsApp()">Compra via WhatsApp</button>
+        <button onclick="closeCart()" style="margin-top: 10px; width: 100%;">Cerrar</button>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-left">
+            <a href="#">CREMA ®</a>
+        </div>
+        <div class="footer-right">
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TIKTOK</a>
+        </div>
+    </footer>
+
+    <!-- Enlace a tu archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
